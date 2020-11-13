@@ -29,4 +29,14 @@ class Square {
     private boolean sameColor(Color color) {
         return this.piece.getColor() == color;
     }
+
+	public void clear() {
+        this.piece = null;
+        this.occupied = false;
+	}
+
+	public void place(Piece piece) {
+        this.piece = piece;
+        this.occupied = true;
+	}
 }

@@ -10,14 +10,17 @@ public class Player {
 		this.prawns = new Pawn[Board.DIMENSION];
 	}
 
-	public void move() {
+	public void move(Board board) {
 		Coordinate origin = new Coordinate();
 		Coordinate destination = new Coordinate();
 
 		origin.provide();
 		destination.provide();
 
-		prawns[1].move(new Square(origin), new Square(destination));	
+		if (prawns[1].move(board.getSquare(origin), board.getSquare(destination))) {
+			board.removePiece(origin);
+			board.putPiece(destination, prawns[1]);
+		}	
 
 	}
 

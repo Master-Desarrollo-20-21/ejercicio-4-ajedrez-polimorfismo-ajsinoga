@@ -17,7 +17,7 @@ class Chess {
     public void play() {
 		do {
 			this.board.show();
-			this.players[this.turn.whoPlay()].move();
+			this.players[this.turn.whoPlay()].move(board);
 			this.totalMovements++;
 			this.turn.change(this.totalMovements);
 		} while (!this.board.isKingDefeated());
