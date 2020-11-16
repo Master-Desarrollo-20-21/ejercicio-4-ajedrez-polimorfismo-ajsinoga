@@ -11,6 +11,12 @@ class Square {
         this.occupied = false;
     }
 
+    public Square(Coordinate coordinate, Piece piece) {
+        this.coordinate = coordinate;
+        this.piece = piece;
+        this.occupied = true;
+    }
+
 	public int direction(Square destination) {
 		return this.coordinate.direction(destination.coordinate);
 	}
@@ -25,6 +31,10 @@ class Square {
         }
 		return false;
     }
+
+    public boolean empty() {
+        return this.piece == null;
+    }
     
     private boolean sameColor(Color color) {
         return this.piece.getColor() == color;
@@ -38,5 +48,9 @@ class Square {
 	public void place(Piece piece) {
         this.piece = piece;
         this.occupied = true;
+	}
+
+	public String nameOfPiece() {
+		return piece.getName();
 	}
 }

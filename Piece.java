@@ -14,6 +14,10 @@ abstract class Piece {
         return this.color;
     }
 
+    public String getName() {
+		return this.name;
+	}
+
     public String show() {
         return this.name;
     }
@@ -23,5 +27,4 @@ abstract class Piece {
     }
 
     public abstract boolean move(Square origin, Square destination);
-
 }
