@@ -1,0 +1,41 @@
+@startuml
+
+class Chess
+class Board
+Class Player
+Class Turn
+Class Square
+Class Coordinate
+Abstract Class Piece
+Class Pawn
+Class Rook
+Class Knight
+Class Bishop
+Class Queen
+Class King
+
+Chess *-- Board
+Chess *-- "2" Player
+Chess *-- Turn
+Chess *-- "32" Piece
+
+Board *-- "64" Square
+Square *-- Coordinate
+
+Piece <|-- "16" Pawn
+Piece <|-- "4" Rook
+Piece <|-- "4" Knight
+Piece <|-- "4" Bishop
+Piece <|-- "2" Queen
+Piece <|-- "2" King
+
+enum Color {
+  WHITE
+  BLACK
+}
+
+Piece *-down- Color
+Square --> Piece
+Player ..> Piece
+
+@enduml
